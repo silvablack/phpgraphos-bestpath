@@ -1,0 +1,23 @@
+CREATE (renascenca:Neighborhood {name : "Renascença"}),
+(cohafuma:Neighborhood {name : "Cohafuma"}),
+(angelim:Neighborhood {name : "Angelim"}),
+(cohab:Neighborhood {name : "Cohab"}),
+(sc:Neighborhood {name : "São Cristóvão"}),
+
+(renascenca)-[:DISTANCE {km: 3,rushHour:20,normalHour:60}]->(cohafuma),
+(renascenca)<-[:DISTANCE {km: 3,rushHour:20,normalHour:60}]-(cohafuma),
+
+(cohafuma)-[:DISTANCE {km: 2.7,rushHour:20,normalHour:60}]->(angelim),
+(cohafuma)<-[:DISTANCE {km: 2.7,rushHour:20,normalHour:60}]-(angelim),
+
+(angelim)-[:DISTANCE {km: 3.2,rushHour:20,normalHour:60}]->(cohab),
+(angelim)<-[:DISTANCE {km: 3.2,rushHour:20,normalHour:60}]-(cohab),
+
+(cohab)-[:DISTANCE {km: 4.3,rushHour:20,normalHour:60}]->(sc),
+(cohab)<-[:DISTANCE {km: 4.3,rushHour:20,normalHour:60}]-(sc),
+
+(cohab)-[:DISTANCE {km: 8,rushHour:20,normalHour:60}]->(cohafuma),
+(cohab)<-[:DISTANCE {km: 8,rushHour:20,normalHour:60}]-(cohafuma),
+
+(sc)-[:DISTANCE {km: 8.3,rushHour:20,normalHour:60}]->(angelim),
+(sc)<-[:DISTANCE {km: 8.3,rushHour:20,normalHour:60}]-(angelim)
